@@ -19,7 +19,7 @@ Example:
 
 import argparse
 import torch
-import os
+import os, time
 import shutil
 
 from torch import nn
@@ -62,7 +62,8 @@ parser.add_argument('--output-dir', type=str, required=True)
 parser.add_argument('--output-types', type=str, required=True, nargs='+', choices=['com', 'pha', 'fgr', 'err', 'ref'])
 parser.add_argument('-y', action='store_true')
 
-args = parser.parse_args()
+# args = parser.parse_args()
+args = parser.parse_known_args()[0]
 
 
 assert 'err' not in args.output_types or args.model_type in ['mattingbase', 'mattingrefine'], \
@@ -130,6 +131,12 @@ with torch.no_grad():
             pha, fgr, err, _ = model(src, bgr)
         elif args.model_type == 'mattingrefine':
             pha, fgr, _, _, err, ref = model(src, bgr)
+
+            for k in range(10):
+                start = time.time()
+                pha, fgr, _, _, err, ref = model(src, bgr)
+                end = time.time()
+                print('elapsed =', end-start)
 
         pathname = dataset.datasets[0].filenames[i]
         pathname = os.path.relpath(pathname, args.images_src)
