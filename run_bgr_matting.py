@@ -74,7 +74,8 @@ class BgrMattingHelper:
             bgr_clr = bgr[:, :3, :, :]
 
             pha, fgr, _, _, err, ref = self.model(src_clr, bgr_clr)
-            fgr[(pha < 1e-3).repeat([1, 3, 1, 1])] = 0
+            thresh = 1. / 255.
+            fgr[(pha < thresh).repeat([1, 3, 1, 1])] = 0
 
             fgr = torch.concat([fgr, pha], dim=1)
             # if src.shape[1] == 4:
