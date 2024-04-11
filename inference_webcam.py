@@ -28,7 +28,7 @@ from tqdm import tqdm
 from PIL import Image
 
 from dataset import VideoDataset
-from model import MattingBase, MattingRefine
+from bgrmatv2 import MattingBase, MattingRefine
 
 
 # --------------- Arguments ---------------

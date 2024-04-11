@@ -36,7 +36,7 @@ from PIL import Image
 
 from dataset import VideoDataset, ZipDataset
 from dataset import augmentation as A
-from model import MattingBase, MattingRefine
+from bgrmatv2 import MattingBase, MattingRefine
 from inference_utils import HomographicAlignment
 
 

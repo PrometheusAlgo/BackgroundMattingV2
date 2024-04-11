@@ -37,8 +37,8 @@ from PIL import Image
 from data_path import DATA_PATH
 from dataset import ImagesDataset, ZipDataset, VideoDataset, SampleDataset
 from dataset import augmentation as A
-from model import MattingRefine
-from model.utils import load_matched_state_dict
+from bgrmatv2 import MattingRefine
+from bgrmatv2.utils import load_matched_state_dict
 
 
 # --------------- Arguments ---------------
