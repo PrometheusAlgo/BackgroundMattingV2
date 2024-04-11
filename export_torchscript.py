@@ -11,7 +11,7 @@ Export TorchScript
 import argparse
 import torch
 from torch import nn
-from model import MattingRefine
+from bgrmatv2 import MattingRefine
 
 
 # --------------- Arguments ---------------

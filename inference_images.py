@@ -32,7 +32,7 @@ from tqdm import tqdm
 
 from dataset import ImagesDataset, ZipDataset
 from dataset import augmentation as A
-from model import MattingBase, MattingRefine
+from bgrmatv2 import MattingBase, MattingRefine
 from inference_utils import HomographicAlignment
 
 

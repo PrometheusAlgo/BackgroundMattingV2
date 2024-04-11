@@ -45,7 +45,7 @@ Compatibility:
 import argparse
 import torch
 
-from model import MattingBase, MattingRefine
+from bgrmatv2 import MattingBase, MattingRefine
 
 
 # --------------- Arguments ---------------
